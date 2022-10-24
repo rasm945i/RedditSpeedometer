@@ -1,2 +1,4 @@
 # The more players the server has, the higher this should be
 update-rate-in-ticks: 20
+# Whether the speed should be shown in the players action-bar
+show-in-actionbar: true
