@@ -2,7 +2,7 @@
 enabled-by-default: false
 # Whether players should be allowed to toggle the speedometer
 allow-toggle: true
-# The more players the server has, the higher this should be
+# Value between 20 and 40 is recommended
 update-rate-in-ticks: 20
 # Whether the speed should be shown in the players action-bar
 show-in-actionbar: true
