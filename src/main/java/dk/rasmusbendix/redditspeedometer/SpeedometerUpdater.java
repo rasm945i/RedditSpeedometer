@@ -102,7 +102,7 @@ public class SpeedometerUpdater {
         plugin.getServer().getScheduler().runTaskLaterAsynchronously(
                 plugin,
                 this::run,
-                plugin.getConfig().getInt("update-rate-in-ticks", 8)
+                plugin.getConfig().getInt("update-rate-in-ticks", 20)
         );
 
     }

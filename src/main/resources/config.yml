@@ -1,2 +1,2 @@
 # The more players the server has, the higher this should be
-update-rate-in-ticks: 5
+update-rate-in-ticks: 20
