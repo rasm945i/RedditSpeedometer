@@ -9,11 +9,6 @@ import org.jetbrains.annotations.NotNull;
 
 public record SpeedometerCommand(SpeedometerUpdater updater) implements CommandExecutor {
 
-
-    public SpeedometerCommand(SpeedometerUpdater updater) {
-        this.updater = updater;
-    }
-
     @Override
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
 
