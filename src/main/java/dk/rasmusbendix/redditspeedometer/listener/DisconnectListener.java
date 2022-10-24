@@ -1,5 +1,7 @@
-package dk.rasmusbendix.redditspeedometer;
+package dk.rasmusbendix.redditspeedometer.listener;
 
+import dk.rasmusbendix.redditspeedometer.RedditSpeedometer;
+import dk.rasmusbendix.redditspeedometer.SpeedometerUpdater;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerQuitEvent;
