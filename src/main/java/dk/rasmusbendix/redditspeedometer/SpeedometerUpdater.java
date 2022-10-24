@@ -3,6 +3,7 @@ package dk.rasmusbendix.redditspeedometer;
 import lombok.Getter;
 import net.kyori.adventure.text.Component;
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -90,7 +91,9 @@ public class SpeedometerUpdater {
 
         // Display blocks per second in the action-bar if its enabled
         if(plugin.getConfig().getBoolean("show-in-actionbar")) {
-            player.sendActionBar(Component.text(df.format(blocksPerSecond)));
+            String message = plugin.getConfig().getString("messages.actionbar-format", "&a%speed%")
+                    .replace("%speed%", df.format(blocksPerSecond));
+            player.sendActionBar(Component.text(ChatColor.translateAlternateColorCodes('&', message)));
         }
 
         speedometerEnabled.put(player.getUniqueId(), blocksPerSecond);
