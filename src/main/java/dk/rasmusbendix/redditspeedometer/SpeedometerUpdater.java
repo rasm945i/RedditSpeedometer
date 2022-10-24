@@ -62,6 +62,13 @@ public class SpeedometerUpdater {
         locationMap.remove(player.getUniqueId());
     }
 
+    public void enableSpeedometer(Player player) {
+        if(hasSpeedometerEnabled(player))
+            return;
+        speedometerEnabled.put(player.getUniqueId(), 0d);
+        locationMap.put(player.getUniqueId(), new LocationTimestamp(player));
+    }
+
     /**
      * @param player Target to check if speedometer is enabled for.
      * @return true - The player has speedometer enabled.<br>
@@ -81,9 +88,12 @@ public class SpeedometerUpdater {
 
         double blocksPerSecond = previous.getBlocksPerSecond(current);
 
-        player.sendActionBar(Component.text(df.format(blocksPerSecond)));
-        speedometerEnabled.put(player.getUniqueId(), blocksPerSecond);
+        // Display blocks per second in the action-bar if its enabled
+        if(plugin.getConfig().getBoolean("show-in-actionbar")) {
+            player.sendActionBar(Component.text(df.format(blocksPerSecond)));
+        }
 
+        speedometerEnabled.put(player.getUniqueId(), blocksPerSecond);
         locationMap.put(player.getUniqueId(), current);
 
     }
@@ -105,6 +115,12 @@ public class SpeedometerUpdater {
                 plugin.getConfig().getInt("update-rate-in-ticks", 20)
         );
 
+    }
+
+    public String getSpeed(Player player) {
+        if(!hasSpeedometerEnabled(player))
+            return "N/A";
+        return df.format(speedometerEnabled.get(player.getUniqueId()));
     }
 
 
