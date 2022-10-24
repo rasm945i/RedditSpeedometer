@@ -24,7 +24,7 @@ public final class RedditSpeedometer extends JavaPlugin {
         boolean allowToggle = getConfig().getBoolean("allow-toggle", true);
         getLogger().info("Allow toggling speedometer: " + allowToggle);
         //noinspection ConstantConditions
-        this.getServer().getPluginCommand("speedometer").setExecutor(new SpeedometerCommand(speedometerUpdater, allowToggle));
+        this.getServer().getPluginCommand("speedometer").setExecutor(new SpeedometerCommand(this, allowToggle));
 
         // Register expansion if PAPI is present
         if(Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null) {
