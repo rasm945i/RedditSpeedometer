@@ -1,0 +1,11 @@
+name: RedditSpeedometer
+version: '${project.version}'
+main: dk.rasmusbendix.redditspeedometer.RedditSpeedometer
+api-version: 1.19
+authors: [ rasm945i, BenteBoi ]
+description: Speedometer, what more to say?
+website: https://en.rasmusbendix.dk
+commands:
+  speedometer:
+    usage: /speedometer
+    description: Toggles your speedometer
