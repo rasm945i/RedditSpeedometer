@@ -6,3 +6,7 @@ allow-toggle: true
 update-rate-in-ticks: 20
 # Whether the speed should be shown in the players action-bar
 show-in-actionbar: true
+messages:
+  enabled-speedometer: "&eSpeedometer is now &aenabled&e!"
+  disabled-speedometer: "&eSpeedometer is now &cdisabled&e!"
+  toggling-not-allowed: "&cToggling the speedometer is not allowed."
