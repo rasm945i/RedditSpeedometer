@@ -6,6 +6,8 @@ allow-toggle: true
 update-rate-in-ticks: 20
 # Whether the speed should be shown in the players action-bar
 show-in-actionbar: true
+# The speed value will be multiplied by this
+speedometer-modifier: 1
 # It is assumed that PlaceholderAPI is not installed. PlaceholderAPI is not supported in any messages.
 messages:
   enabled-speedometer: "&eSpeedometer is now &aenabled&e!"

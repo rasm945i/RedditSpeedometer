@@ -87,7 +87,7 @@ public class SpeedometerUpdater {
         LocationTimestamp previous = locationMap.get(player.getUniqueId());
         LocationTimestamp current = new LocationTimestamp(player);
 
-        double blocksPerSecond = previous.getBlocksPerSecond(current);
+        double blocksPerSecond = previous.getBlocksPerSecond(current) * plugin.getConfig().getInt("speedometer-modifier", 1);
 
         // Display blocks per second in the action-bar if its enabled
         if(plugin.getConfig().getBoolean("show-in-actionbar")) {
