@@ -153,6 +153,9 @@ public class SpeedometerUpdater {
          */
         public double getBlocksPerSecond(LocationTimestamp other) {
 
+            if(this.location.getWorld() != other.location.getWorld())
+                return 0;
+
             double dist = location.distance(other.location);
             double timeDiff = (Math.max(timestamp, other.timestamp) - Math.min(timestamp, other.timestamp)) / 1000f;
 
